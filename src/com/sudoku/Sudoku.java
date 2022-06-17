@@ -120,8 +120,8 @@ public class Sudoku implements SufokuTDA {
         int f = corresponde3x3(filaActual);
         int c = corresponde3x3(columnaActual);
 
-        while (f < corresponde3x3(f) + 1 && valido) {
-            while (c < corresponde3x3(f) + 1 && valido) {
+        while (f < corresponde3x3(filaActual) + 3 && valido) {
+            while (c < corresponde3x3(columnaActual) + 3 && valido) {
                 if (sol[filaActual][columnaActual] == sol[f][c] && f != filaActual && c != columnaActual) {
                     return false;
                 }
@@ -146,13 +146,13 @@ public class Sudoku implements SufokuTDA {
 
         switch (k) {
             case 1:
-                resultado = 1;
+                resultado = 0;
                 break;
             case 2:
-                resultado = 4;
+                resultado = 3;
                 break;
             case 3:
-                resultado = 7;
+                resultado = 6;
                 break;
         }
         return resultado;
